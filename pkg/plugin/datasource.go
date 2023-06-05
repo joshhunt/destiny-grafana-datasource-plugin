@@ -8,7 +8,7 @@ import (
 	"sort"
 	"time"
 
-	bungieAPI "destinydefinitions-destiny-datasource/pkg/bungieApi"
+	bungieAPI "joshhunt-destiny-datasource/pkg/bungieApi"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/instancemgmt"

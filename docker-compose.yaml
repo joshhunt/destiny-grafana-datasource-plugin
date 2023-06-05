@@ -2,7 +2,7 @@ version: '3.0'
 
 services:
   grafana:
-    container_name: 'destinydefinitions-destiny-datasource'
+    container_name: 'joshhunt-destiny-datasource'
     build:
       context: ./.config
       args:
@@ -10,5 +10,5 @@ services:
     ports:
       - 3000:3000/tcp
     volumes:
-      - ./dist:/var/lib/grafana/plugins/destinydefinitions-destiny-datasource
+      - ./dist:/var/lib/grafana/plugins/joshhunt-destiny-datasource
       - ./provisioning:/etc/grafana/provisioning

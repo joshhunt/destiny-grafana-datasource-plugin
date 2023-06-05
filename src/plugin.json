@@ -2,19 +2,19 @@
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "datasource",
   "name": "Destiny Datasource",
-  "id": "destinydefinitions-destiny-datasource",
+  "id": "joshhunt-destiny-datasource",
   "metrics": true,
   "backend": true,
   "executable": "gpx_destiny_datasource",
   "info": {
     "description": "Retrieves data from the destiny api",
     "author": {
-      "name": "Destinydefinitions"
+      "name": "Josh Hunt"
     },
     "keywords": ["datasource"],
     "logos": {
-      "small": "img/logo.svg",
-      "large": "img/logo.svg"
+      "small": "img/logo2.svg",
+      "large": "img/logo2.svg"
     },
     "links": [],
     "screenshots": [],

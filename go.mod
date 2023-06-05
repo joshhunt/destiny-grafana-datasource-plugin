@@ -1,4 +1,4 @@
-module destinydefinitions-destiny-datasource
+module joshhunt-destiny-datasource
 
 go 1.19
 
