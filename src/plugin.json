@@ -7,7 +7,7 @@
   "backend": true,
   "executable": "gpx_destiny_datasource",
   "info": {
-    "description": "Retrieves data from the destiny api",
+    "description": "Data source to retrieve Post Game Carnage Reports from Destiny 2",
     "author": {
       "name": "Josh Hunt"
     },
@@ -17,7 +17,12 @@
       "large": "img/logo2.svg"
     },
     "links": [],
-    "screenshots": [],
+    "screenshots": [
+      {
+        "name": "Query editor",
+        "path": "img/screenshot.png"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
