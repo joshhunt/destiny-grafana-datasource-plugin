@@ -2,6 +2,11 @@ package bungieAPI
 
 import bungie "github.com/joshhunt/bungieapigo/pkg/models"
 
+type MembershipPair struct {
+	MembershipType int    `json:"membershipType"`
+	MembershipId   string `json:"membershipId"`
+}
+
 type DestinyResponse[T any] struct {
 	Response    T      `json:"Response"`
 	ErrorCode   int    `json:"ErrorCode"`

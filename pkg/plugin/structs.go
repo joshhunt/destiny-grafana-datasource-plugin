@@ -1,15 +1,6 @@
 package plugin
 
-type MembershipPair struct {
-	MembershipType int    `json:"membershipType"`
-	MembershipId   string `json:"membershipId"`
-}
-
-type QueryModel struct {
-	Characters   []string       `json:"characters"`
-	Profile      MembershipPair `json:"profile"`
-	ActivityMode int            `json:"activityMode"`
-}
+import bungieAPI "joshhunt-destiny-datasource/pkg/bungieApi"
 
 // TODO: move all these destiny structs elsewhere
 
@@ -18,7 +9,7 @@ type ProfileSearchResourceRequestBody struct {
 }
 
 type ListCharactersResourceRequestBody struct {
-	MembershipPair
+	bungieAPI.MembershipPair
 }
 
 // type ListCharactersResourceResponseItem struct {

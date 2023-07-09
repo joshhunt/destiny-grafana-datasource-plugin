@@ -16,7 +16,12 @@ import (
 	"github.com/unknwon/log"
 )
 
-var ACTIVITIES_PAGE_SIZE = 250
+var (
+	ACTIVITIES_PAGE_SIZE = 250
+	httpClient           = http.Client{
+		Timeout: time.Second * 15,
+	}
+)
 
 type BungieAPI struct {
 	apiKey string
@@ -45,16 +50,13 @@ func (bungieAPI BungieAPI) Get(path string, query url.Values) ([]byte, error) {
 		query = url.Values{}
 	}
 
-	query.Set("_c", strconv.Itoa(int(time.Now().Unix())))
+	query.Set("_cacheBust", strconv.Itoa(int(time.Now().Unix())))
 	req.URL.RawQuery = query.Encode()
 
 	backend.Logger.Debug("Requesting URL", "url", req.URL.String())
 
 	req.Header.Set("x-api-key", bungieAPI.apiKey)
 
-	httpClient := http.Client{
-		Timeout: time.Second * 10,
-	}
 	res, getErr := httpClient.Do(req)
 	if getErr != nil {
 		return nil, getErr

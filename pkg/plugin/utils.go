@@ -1,6 +1,8 @@
 package plugin
 
-func validateQuery(query QueryModel) bool {
+import "joshhunt-destiny-datasource/pkg/query"
+
+func validateQuery(query query.QueryModel) bool {
 	if query.Profile.MembershipType == 0 {
 		return false
 	}
