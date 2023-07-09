@@ -18,6 +18,7 @@ type Props = QueryEditorProps<DataSource, MyQuery, MyDataSourceOptions>;
 export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) {
   const [characterOptions, setCharacterOptions] = useState<ListCharactersItem[]>([]);
   const [activityModes, setActivityModes] = useState<SelectableValue[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   const updateQuery = useCallback(
     (update: Partial<MyQuery>) => {
@@ -94,6 +95,8 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
     [datasource]
   );
 
+  const handleSearchInputChange = useCallback((searchValue: string) => setIsSearching(!!searchValue), []);
+
   const onMembershipChange = useCallback(
     (change: SelectableValue<Membership>) => {
       updateQuery({ profile: change.value });
@@ -161,6 +164,9 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
             onChange={onMembershipChange}
             value={profileValue[0]}
             defaultOptions={profileValue}
+            onInputChange={handleSearchInputChange}
+            noOptionsMessage={isSearching ? 'No players found' : 'Type to search for player'}
+            loadingMessage="Searching..."
           />
         </EditorField>
 
