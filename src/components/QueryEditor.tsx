@@ -11,7 +11,7 @@ import {
   MyQuery,
   TrialsReportSearchResult,
 } from '../types';
-import { EditorField, EditorRow, EditorRows, EditorSwitch } from '@grafana/experimental';
+import { EditorField, EditorRow, EditorRows, EditorSwitch } from '@grafana/plugin-ui';
 
 type Props = QueryEditorProps<DataSource, MyQuery, MyDataSourceOptions>;
 
