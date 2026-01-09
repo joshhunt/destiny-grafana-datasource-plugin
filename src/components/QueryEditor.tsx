@@ -81,7 +81,7 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
         let membershipId = v.membershipId;
         let membershipType = v.membershipType;
 
-        if (v.crossSaveOverride) {
+        if (v.crossSaveOverride && v.crossSaveOverride.membershipType > 0) {
           membershipId = v.crossSaveOverride.membershipId;
           membershipType = v.crossSaveOverride.membershipType;
         }
