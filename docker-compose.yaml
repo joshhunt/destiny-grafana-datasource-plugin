@@ -4,9 +4,11 @@ services:
   grafana:
     build:
       args:
-        grafana_version: ${GRAFANA_VERSION:-10.4.0}
+        grafana_version: ${GRAFANA_VERSION:-13.0.0}
     ports:
       - 3000:3000/tcp
     extends:
       file: .config/docker-compose-base.yaml
       service: grafana
+    environment:
+      GF_FEATURE_TOGGLES_react19: 'true'
