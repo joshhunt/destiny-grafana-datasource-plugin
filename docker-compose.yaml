@@ -4,7 +4,7 @@ services:
   grafana:
     build:
       args:
-        grafana_version: ${GRAFANA_VERSION:-13.0.0}
+        grafana_version: ${GRAFANA_VERSION:-13.0.1}
     ports:
       - 3000:3000/tcp
     extends:
